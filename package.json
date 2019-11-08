@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "lodash": "^4.17.15",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }

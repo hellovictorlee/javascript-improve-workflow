@@ -1,4 +1,4 @@
-const { flow: pipe, tap } = require('lodash/fp')
+const { flow: pipe, tap } = require("lodash/fp");
 
 // const curry = (fn, ...args) => {
 //   if (fn.length <= args.length) {
@@ -8,30 +8,33 @@ const { flow: pipe, tap } = require('lodash/fp')
 //   }
 // }
 
+// const curry = (fn, arr = []) => (...args) =>
+//   (a => (a.length === fn.length ? fn(...a) : curry(fn, a)))([...arr, ...args]);
+
 // const tap = curry((fn, x) => {
-//   fn(x)
-//   return x
-// })
+//   fn(x);
+//   return x;
+// });
 
 const trace = label => {
   return tap(x =>
     console.log(`>>> ${label} Output:  ${JSON.stringify(x, null, 2)}`)
-  )
-}
+  );
+};
 
-const a = value => value + 1
-const b = value => value + 2
-const c = value => value + 4
+const a = value => value + 1;
+const b = value => value + 2;
+const c = value => value + 4;
 
 const fn = pipe(
   a,
-  trace('a'),
+  trace("a"),
   b,
-  trace('b'),
+  trace("b"),
   c,
-  trace('c')
-)
+  trace("c")
+);
 
-const input = 0
-const res = fn(input)
-console.log({ res })
+const input = 0;
+const res = fn(input);
+console.log({ res });
